@@ -27,9 +27,6 @@ const Movie = () => {
     if (loading) return <Spinner />;
     if (error) return <div>Something went wrong...</div>;
 
-    const trailerURL = filterTrailerURL(movie);
-    console.log("Trailer is" + trailerURL)
-  
     return (
         <>
             <BreadCrumb movieTitle={movie.original_title} />
