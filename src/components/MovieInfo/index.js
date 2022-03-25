@@ -17,13 +17,11 @@ import { Wrapper, Content, Text } from "./MovieInfo.styles";
 //Context
 import { Context } from '../../context';
 
-const MovieInfo = ({ movie, trailer }) =>
-{
-
+const MovieInfo = ({ movie }) => {
+    
     const [user] = useContext(Context);
 
-    const handleRating = async value =>
-    {
+    const handleRating = async value => {
         const rate = await API.rateMovie(user.sessionId, movie.id, value);
         console.log(rate);
     }
@@ -70,9 +68,16 @@ const MovieInfo = ({ movie, trailer }) =>
                         </div>
                         )}
                     </div>
-                </Text>
-            </Content>
-        </Wrapper>
+                </div>
+                {user && (
+                <div>
+                    <p>Rate Movie</p>
+                    <Rate callback={handleRating} />
+                </div>
+                )}
+            </Text>
+        </Content>
+    </Wrapper>
     );
 };
 
