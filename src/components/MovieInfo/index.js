@@ -65,7 +65,7 @@ const MovieInfo = ({ movie, trailer }) =>
                             )}
                         </div>
                         {trailer != "No trailer" && (<div className="trailer">
-                            <iframe className="iframe" src={trailer} allowFullScreen="true">
+                            <iframe className="iframe" src={trailer} allowFullScreen="allowfullscreen">
                             </iframe>
                         </div>
                         )}

@@ -32,8 +32,7 @@ const Movie = () =>
     if (error) return <div>Something went wrong...</div>;
 
     const trailerURL = filterTrailerURL(movie);
-    //console.log(movie.videos['results'].filter((e) => { return e['name'] == 'Official Trailer' }))
-    console.log(filterTrailerURL(movie))
+    console.log("Trailer is" + trailerURL)
 
     return (
         <>
