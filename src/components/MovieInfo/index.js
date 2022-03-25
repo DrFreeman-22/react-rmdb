@@ -25,7 +25,7 @@ const MovieInfo = ({ movie, trailer }) =>
     const handleRating = async value =>
     {
         const rate = await API.rateMovie(user.sessionId, movie.id, value);
-        console.log(rate);
+        //console.log(rate);
     }
 
     return (
@@ -65,7 +65,7 @@ const MovieInfo = ({ movie, trailer }) =>
                             )}
                         </div>
                         {trailer != "No trailer" && (<div className="trailer">
-                            <iframe className="iframe" src={trailer} allowFullScreen="true">
+                            <iframe className="iframe" src={trailer} allowFullScreen="allowFullScreen">
                             </iframe>
                         </div>
                         )}
