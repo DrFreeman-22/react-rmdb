@@ -69,6 +69,7 @@ const MovieInfo = ({ movie, trailer }) =>
                             </iframe>
                         </div>
                         )}
+                        {trailer == "No trailer" && (<p>No trailer</p>)}
                     </div>
                 </Text>
             </Content>
