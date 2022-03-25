@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from '../../config';
 
 export const Wrapper = styled.div`
-    background: ${({ backdrop }) => 
+    background: ${({ backdrop }) =>
         backdrop ? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop}')`
-        : '#000'
+            : '#000'
     };
     background-size: cover;
     background-position: center;
@@ -67,9 +67,33 @@ export const Text = styled.div`
     }
 
     h1 {
-        @media screen and (max-weight: 768px) {
+        @media only screen and (max-width: 768px) {
             font-size: var(--fontBig);
         }
     }
-    
+
+    .content-wrapper-child-left {
+
+        float: left;
+        padding: 20px;
+    }
+
+    .trailer {
+
+        margin-top: 20px;
+
+        @media only screen and (min-width: 768px) {
+            margin-left: 250px;
+        }
+    }
+
+    iframe {
+        width: 420px;
+        height: 315px;
+        border: none;
+
+        @media only screen and (max-width: 768px) {
+            width: 300px;
+        }
+    }
 `;

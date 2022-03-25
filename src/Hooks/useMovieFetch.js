@@ -4,13 +4,16 @@ import API from '../API';
 //Helpers
 import { isPersistedState } from '../helpers';
 
-export const useMovieFetch = movieId => {
+export const useMovieFetch = movieId =>
+{
     const [state, setState] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    const fetchMovie = useCallback(async () => {
-        try {
+    const fetchMovie = useCallback(async () =>
+    {
+        try
+        {
             setLoading(true);
             setError(false);
 
@@ -29,16 +32,19 @@ export const useMovieFetch = movieId => {
 
             setLoading(false);
 
-        } catch (error) {
+        } catch (error)
+        {
             setError(true);
         }
     }, [movieId]);
 
-    useEffect(() => {
-        
+    useEffect(() =>
+    {
+
         const sessionState = isPersistedState(movieId);
 
-        if(sessionState) {
+        if (sessionState)
+        {
             setState(sessionState);
             setLoading(false);
             return;
@@ -48,7 +54,8 @@ export const useMovieFetch = movieId => {
     }, [movieId, fetchMovie]);
 
     //Write to session storage
-    useEffect(() => {
+    useEffect(() =>
+    {
         sessionStorage.setItem(movieId, JSON.stringify(state));
     }, [movieId, state]);
 
